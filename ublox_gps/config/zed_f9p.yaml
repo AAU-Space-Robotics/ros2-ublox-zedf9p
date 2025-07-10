@@ -6,12 +6,12 @@ ublox_gps_node:
     uart1:
       baudrate: 460800
     gnss:
-      glonass: false
-      beidou: false
+      glonass: true
+      beidou: true
       gps: true
-      qzss: false
-      galileo: false
-      imes: false
+      qzss: true
+      galileo: true
+      imes: true
     # TMODE3 Config
     tmode3: 1                   # Survey-In Mode
     sv_in:

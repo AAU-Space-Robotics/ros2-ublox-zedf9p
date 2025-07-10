@@ -15,9 +15,9 @@ Features:
 ### Supports:
 ```
 - Ubuntu 20.04 (Tested)
-- Ubuntu 22.04 (Untested)
+- Ubuntu 22.04 (Tested)
 - ROS2 Foxy and ROS2 Galactic (Tested)
-- ROS2 Humble (Untested)
+- ROS2 Humble (Tested)
 - Colcon
 - Firmware 9
 ```
