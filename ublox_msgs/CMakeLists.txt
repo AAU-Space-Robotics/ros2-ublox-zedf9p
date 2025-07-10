@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(ublox_msgs)
 
-cmake_policy(SET CMP0148 OLD)
-
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
