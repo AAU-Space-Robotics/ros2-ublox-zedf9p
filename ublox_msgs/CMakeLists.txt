@@ -1,5 +1,7 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(ublox_msgs)
+
+cmake_policy(SET CMP0148 OLD)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -105,7 +107,13 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 
 include_directories(include)
 add_library(${PROJECT_NAME}_lib src/ublox_msgs.cpp)
-rosidl_target_interfaces(${PROJECT_NAME}_lib ${PROJECT_NAME} "rosidl_typesupport_cpp")
+# Get the C++ typesupport for the messages in this project
+rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
+
+# Link the library against the C++ typesupport target
+target_link_libraries(${PROJECT_NAME}_lib PRIVATE
+  ${cpp_typesupport_target}
+)
 ament_target_dependencies(${PROJECT_NAME}_lib
   "ublox_serialization"
 )
